@@ -1,0 +1,9 @@
+.widget-buttons-grid button {
+    border-radius: 14px;
+    margin: 4px;
+    padding: 8px;
+}
+
+.widget-buttons-grid button:hover {
+    background: @hover;
+}

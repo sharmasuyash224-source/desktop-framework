@@ -1,0 +1,14 @@
+window {
+    width: 38%;
+    location: center;
+    anchor: center;
+
+    border: 2px;
+    border-color: @accent;
+
+    border-radius: 22px;
+
+    background-color: @bg;
+
+    padding: 22px;
+}

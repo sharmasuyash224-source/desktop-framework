@@ -1,0 +1,13 @@
+configuration {
+    modi: "drun";
+
+    show-icons: false;
+
+    font: "JetBrainsMono Nerd Font 14";
+
+    location: 0;
+
+    terminal: "kitty";
+}
+
+@theme "theme"

@@ -1,0 +1,15 @@
+listview {
+    lines: 8;
+
+    columns: 1;
+
+    spacing: 6px;
+
+    cycle: true;
+
+    dynamic: true;
+
+    scrollbar: false;
+
+    margin: 18px 0px 0px 0px;
+}

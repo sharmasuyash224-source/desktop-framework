@@ -1,0 +1,5 @@
+@import "themes/colors.rasi"
+@import "themes/window.rasi"
+@import "themes/input.rasi"
+@import "themes/listview.rasi"
+@import "themes/elements.rasi"

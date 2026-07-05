@@ -1,0 +1,9 @@
+listview {
+    lines: 5;
+
+    columns: 1;
+
+    spacing: 8px;
+
+    scrollbar: false;
+}

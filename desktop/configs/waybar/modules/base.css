@@ -1,0 +1,29 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+    border: none;
+}
+
+window#waybar {
+    background: transparent;
+    color: @fg;
+}
+
+/* ===== Floating Islands ===== */
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @bg;
+
+    border: 1px solid @border;
+
+    border-radius: 18px;
+
+    padding: 2px 12px;
+
+    margin: 0;
+
+    min-height: 34px;
+}

@@ -1,0 +1,20 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+}
+
+.control-center,
+.notification-row,
+.notification {
+    border-radius: 20px;
+}
+
+.notification {
+    background: @card;
+    border: 1px solid @border;
+}
+
+.control-center {
+    background: @bg;
+    border: 1px solid @border;
+}

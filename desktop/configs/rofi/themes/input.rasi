@@ -1,0 +1,25 @@
+inputbar {
+    children: [ prompt, entry ];
+
+    spacing: 12px;
+
+    padding: 12px;
+
+    border: 0px;
+
+    border-radius: 14px;
+
+    background-color: @border;
+}
+
+prompt {
+    text-color: @accent;
+}
+
+entry {
+    text-color: @fg;
+
+    placeholder: "Search applications...";
+
+    placeholder-color: rgba(255,255,255,0.35);
+}

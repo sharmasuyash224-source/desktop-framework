@@ -1,0 +1,18 @@
+/* ==========================================
+ * Arch Logo
+ * ========================================== */
+
+#custom-logo {
+    color: @accent;
+
+    font-size: 18px;
+
+    padding-left: 4px;
+    padding-right: 10px;
+
+    transition: all 180ms;
+}
+
+#custom-logo:hover {
+    color: @fg;
+}

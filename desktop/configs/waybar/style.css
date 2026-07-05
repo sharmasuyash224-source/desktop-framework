@@ -1,0 +1,12 @@
+@import "/home/god/.config/theme-engine/generated/waybar-colors.css";
+
+@import url("modules/colors.css");
+
+@import url("modules/base.css");
+@import url("modules/left.css");
+@import url("modules/center.css");
+@import url("modules/right.css");
+@import url("modules/workspaces.css");
+@import url("modules/media.css");
+@import url("modules/clock.css");
+

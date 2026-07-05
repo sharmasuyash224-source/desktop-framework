@@ -1,0 +1,13 @@
+/* Semantic Colors */
+
+@define-color bg alpha(@background, 0.92);
+@define-color fg @foreground;
+
+@define-color accent @color4;
+@define-color success @color2;
+@define-color warning @color3;
+@define-color danger @color1;
+
+@define-color border alpha(@foreground, 0.08);
+@define-color hover alpha(@foreground, 0.08);
+@define-color inactive alpha(@foreground, 0.45);

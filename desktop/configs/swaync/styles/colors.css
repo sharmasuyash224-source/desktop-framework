@@ -1,0 +1,17 @@
+/* ==========================================
+ * Wallust Colors (Temporary)
+ * ========================================== */
+
+@define-color bg rgba(25,25,25,0.82);
+@define-color fg #ECEFF4;
+
+@define-color accent #89B4FA;
+
+@define-color success #A6E3A1;
+@define-color warning #F9E2AF;
+@define-color danger #F38BA8;
+
+@define-color border rgba(255,255,255,0.08);
+
+@define-color hover rgba(255,255,255,0.08);
+@define-color card rgba(35,35,35,0.88);

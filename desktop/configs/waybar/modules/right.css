@@ -1,0 +1,156 @@
+/* ===== Common Modules ===== */
+
+
+
+#custom-volume,
+#custom-network,
+#custom-bluetooth,
+#battery,
+#memory,
+#cpu {
+    padding: 0 8px;
+    color: @fg;
+    transition: all 200ms;
+}
+
+/* ===== Hover ===== */
+
+
+
+#custom-volume:hover,
+#custom-network:hover,
+#custom-bluetooth:hover,
+#battery:hover,
+#memory:hover,
+#cpu:hover {
+    color: @accent;
+}
+
+/* ===========================
+ * Audio
+ * =========================== */
+
+#custom-volume {
+    color: @success;
+    padding: 0 8px;
+    transition: 180ms;
+}
+
+#custom-volume.normal:hover {
+    color: @fg;
+}
+
+#custom-volume.muted {
+    color: @danger;
+}
+
+/* ===========================
+ * Network
+ * =========================== */
+
+#custom-network {
+    color: @warning;
+    padding: 0 8px;
+    transition: all 200ms;
+}
+
+#custom-network.disconnected {
+    color: @danger;
+}
+
+#custom-network:hover {
+    color: @fg;
+}
+
+/* ===========================
+ * Bluetooth
+ * =========================== */
+
+#custom-bluetooth {
+    color: @accent;
+    padding: 0 8px;
+    transition: all 200ms;
+}
+
+#custom-bluetooth.hidden {
+    padding: 0;
+    margin: 0;
+}
+
+#custom-bluetooth:hover {
+    color: @fg;
+}
+/* ===========================
+ * Battery
+ * =========================== */
+
+#custom-battery {
+    padding: 0 8px;
+    color: @accent;
+    transition: all 180ms;
+}
+
+#custom-battery.normal {
+    color: @accent;
+}
+
+#custom-battery.charging {
+    color: @success;
+}
+
+#custom-battery.warning {
+    color: @warning;
+}
+
+#custom-battery.critical {
+    color: @danger;
+}
+
+
+/* ===== Memory ===== */
+
+#memory {
+    color: @color7;
+}
+
+/* ===== CPU ===== */
+
+#cpu {
+    color: @color8;
+}
+
+/* ===========================
+ * Bluetooth
+ * =========================== */
+
+#custom-bluetooth {
+    color: @accent;
+
+    padding: 0 8px;
+}
+
+#custom-bluetooth.disabled {
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+    opacity: 0;
+}
+
+/* ===========================
+ * Updates
+ * =========================== */
+
+#custom-updates {
+    color: @warning;
+    padding: 0 8px;
+    transition: all 180ms;
+}
+
+#custom-updates:hover {
+    color: @fg;
+}
+
+#custom-updates.hidden {
+    padding: 0;
+    margin: 0;
+}

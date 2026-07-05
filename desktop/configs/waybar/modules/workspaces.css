@@ -1,0 +1,45 @@
+/* ==========================================
+ * Workspaces
+ * ========================================== */
+
+#workspaces {
+    margin: 0;
+    padding: 0;
+}
+
+#workspaces button {
+    min-width: 30px;
+    min-height: 30px;
+
+    padding: 0;
+    margin: 0 3px;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: @inactive;
+
+    font-weight: 700;
+
+    transition: all 180ms;
+}
+
+#workspaces button:hover {
+    background: @hover;
+    color: @fg;
+}
+
+#workspaces button.active {
+    background: @accent;
+    color: @background;
+}
+
+#workspaces button.urgent {
+    background: @danger;
+    color: white;
+}
+
+#workspaces button.empty {
+    opacity: 0.55;
+}

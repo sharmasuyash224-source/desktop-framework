@@ -1,0 +1,33 @@
+element {
+    orientation: horizontal;
+
+    spacing: 12px;
+
+    padding: 10px;
+
+    border-radius: 12px;
+
+    background-color: transparent;
+}
+
+element-icon {
+    size: 22px;
+}
+
+element-text {
+    text-color: @fg;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @bg;
+    border-radius: 12px;
+}
+
+element selected element-text {
+    text-color: @bg;
+}
+
+element selected element-icon {
+    text-color: @bg;
+}

@@ -1,0 +1,120 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 3,
+    "margin-left": 12,
+    "margin-right": 12,
+    "spacing": 12,
+
+    "modules-left": [
+        "custom/logo",
+        "hyprland/workspaces"
+    ],
+
+    "modules-center": [
+        "custom/clock"
+    ],
+
+    "modules-right": [
+        "custom/media",
+        "custom/volume",
+        "custom/network",
+        "custom/bluetooth",
+        "custom/battery",
+        "memory",
+        "cpu",
+        "custom/updates"
+    ],
+
+    "custom/logo": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "rofi -show drun"
+    },
+
+    "hyprland/workspaces": {
+    "format": "{name}",
+    "sort-by-number": true,
+    "disable-scroll": false,
+    "all-outputs": false,
+    "persistent-workspaces": {
+        "*": 5
+    }
+},
+
+    "custom/clock": {
+    "exec": "~/.config/waybar/scripts/clock.sh",
+    "return-type": "json",
+    "interval": 1,
+    "tooltip": true,
+    "on-click": "gnome-calendar"
+},
+
+    "custom/network": {
+    
+    "exec": "~/.config/waybar/scripts/network.sh",
+    "return-type": "json",
+    "interval": 2,
+    "tooltip": true,
+    "on-click": "nmrs"
+},
+
+    "custom/bluetooth": {
+    "exec": "~/.config/waybar/scripts/bluetooth.sh",
+    "return-type": "json",
+    "interval": 2,
+    "on-click": "blueman-manager",
+    "tooltip": true
+},
+
+    "custom/battery": {
+    "exec": "~/.config/waybar/scripts/battery.sh",
+    "return-type": "json",
+    "interval": 15,
+    "tooltip": true
+},
+    "memory": {
+        "format": "󰍛 {}%"
+    },
+
+    "cpu": {
+        "format": "󰻠 {usage}%"
+    },
+
+    "custom/media": {
+    "exec": "~/.config/waybar/scripts/media.sh",
+    "return-type": "json",
+    "interval": 1,
+    "max-length": 40,
+    "escape": true,
+    "tooltip": true,
+
+    "on-click": "playerctl play-pause",
+
+    "on-click-right": "playerctl stop",
+
+    "on-scroll-up": "playerctl next",
+
+    "on-scroll-down": "playerctl previous"
+    },
+
+    "custom/volume": {
+    "exec": "~/.config/waybar/scripts/volume.sh",
+    "return-type": "json",
+    "interval": 1,
+
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+
+    "tooltip": true
+    },
+    "custom/updates": {
+    "exec": "~/.config/waybar/scripts/updates.sh",
+    "return-type": "json",
+    "interval": 1800,
+    "tooltip": true,
+    "on-click": "ghostty -e sudo pacman -Syu"
+}
+}

@@ -1,0 +1,28 @@
+.notification-row {
+    margin: 8px 12px;
+}
+
+.notification {
+    padding: 14px;
+    transition: 180ms;
+}
+
+.notification:hover {
+    border-color: @accent;
+}
+
+.summary {
+    color: @fg;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.body {
+    color: alpha(@fg,0.82);
+    margin-top: 6px;
+}
+
+.time {
+    color: alpha(@fg,0.55);
+    font-size: 11px;
+}

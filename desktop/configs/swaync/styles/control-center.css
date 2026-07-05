@@ -1,0 +1,14 @@
+.control-center {
+    padding: 14px;
+}
+
+.control-center-title {
+    font-size: 17px;
+    font-weight: bold;
+    color: @fg;
+}
+
+.widget-title {
+    color: @fg;
+    margin-bottom: 8px;
+}

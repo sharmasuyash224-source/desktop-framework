@@ -1,0 +1,17 @@
+window {
+    width: 22%;
+
+    location: center;
+
+    anchor: center;
+
+    border: 2px;
+
+    border-radius: 22px;
+
+    border-color: @accent;
+
+    background-color: @bg;
+
+    padding: 22px;
+}

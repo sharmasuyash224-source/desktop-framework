@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ROOT="$HOME/.config/desktop"
+
+source "$ROOT/core/framework.sh"
+
+COMMAND="${1:-help}"
+shift || true
+
+COMMAND_DIR="$ROOT/commands/$COMMAND"
+
+if [[ -d "$COMMAND_DIR" ]]; then
+    source "$COMMAND_DIR/manifest.sh"
+    exec "$COMMAND_DIR/run.sh" "$@"
+fi
+
+desktop::help
+exit 0

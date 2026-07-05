@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+MODULE_NAME="wallpaper"
+MODULE_VERSION="2.0.0"
+
+MODULE_DESCRIPTION="Wallpaper engine"
+
+MODULE_AUTHOR="Suyash"
+
+MODULE_CONFIG_DIR="$HOME/.config/hypr"
+
+MODULE_REQUIRED=true
+MODULE_ENABLED=true
+
+MODULE_THEMEABLE=true
+MODULE_RELOADABLE=false

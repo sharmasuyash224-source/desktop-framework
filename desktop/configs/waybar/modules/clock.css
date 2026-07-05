@@ -1,0 +1,14 @@
+#custom-clock {
+    color: @fg;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    padding: 0 18px;
+
+    transition: all 180ms;
+}
+
+#custom-clock:hover {
+    color: @accent;
+}

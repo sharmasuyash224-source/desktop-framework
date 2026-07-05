@@ -1,0 +1,15 @@
+element {
+    padding: 10px;
+
+    border-radius: 14px;
+
+    spacing: 12px;
+}
+
+element selected {
+    background-color: @accent;
+}
+
+element selected element-text {
+    text-color: @bg;
+}
