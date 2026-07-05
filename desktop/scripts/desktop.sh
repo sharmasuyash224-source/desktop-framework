@@ -2,45 +2,31 @@
 
 set -euo pipefail
 
-source "$HOME/.config/desktop/manifest.sh"
+ROOT="$HOME/.config/desktop"
 
-case "${1:-}" in
+if [[ $# -eq 0 ]]; then
+    "$ROOT/core/help.sh"
+    exit 0
+fi
 
-    theme)
-        "$THEME_ENGINE_DIR/generate-theme.sh"
-        ;;
+COMMAND="$1"
+shift || true
 
-    reload)
-        "$CONFIG_DIR/scripts/reload.sh"
-        ;;
+MANIFEST="$ROOT/commands/$COMMAND/manifest.sh"
+RUNNER="$ROOT/commands/$COMMAND/run.sh"
 
-    wallpaper)
-        "$CONFIG_DIR/scripts/wallpaper.sh"
-        ;;
+if [[ ! -f "$MANIFEST" ]]; then
+    echo "Unknown command: $COMMAND"
+    echo
+    "$ROOT/core/help.sh"
+    exit 1
+fi
 
-    session)
-        "$CONFIG_DIR/scripts/session.sh"
-        ;;
+source "$MANIFEST"
 
-    power)
-        "$POWERMENU_DIR/scripts/power.sh"
-        ;;
+if [[ ! -x "$RUNNER" ]]; then
+    echo "Command '$COMMAND' is not executable."
+    exit 1
+fi
 
-    lock)
-        exec "$HOME/.config/desktop/modules/hyprlock/lock.sh"
-        ;;
-
-    *)
-        echo
-        echo "Desktop Framework"
-        echo
-        echo "Commands:"
-        echo "  theme"
-        echo "  reload"
-        echo "  wallpaper"
-        echo "  session"
-        echo "  power"
-        echo "  lock"
-        echo
-        ;;
-esac
+exec "$RUNNER" "$@"

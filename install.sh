@@ -7,20 +7,34 @@ ROOT="$(cd "$(dirname "$0")" && pwd)"
 echo "==> Installing Desktop Framework v1.0.0"
 
 mkdir -p "$HOME/.config"
-
-if [[ ! -e "$HOME/.config/desktop" ]]; then
-ln -s "$ROOT/desktop" "$HOME/.config/desktop"
-fi
-
 mkdir -p "$HOME/.local/bin"
 
-ln -sf "$HOME/.config/desktop/scripts/desktop.sh" 
-"$HOME/.local/bin/desktop"
+rm -f "$HOME/.config/desktop"
+ln -s "$ROOT/desktop" "$HOME/.config/desktop"
 
-chmod +x "$HOME/.config/desktop/scripts/"*.sh
+rm -rf "$HOME/.config/waybar"
+ln -s "$ROOT/desktop/configs/waybar" "$HOME/.config/waybar"
+
+rm -rf "$HOME/.config/hyprlock"
+ln -s "$ROOT/desktop/configs/hyprlock" "$HOME/.config/hyprlock"
+
+rm -rf "$HOME/.config/rofi"
+ln -s "$ROOT/desktop/configs/rofi" "$HOME/.config/rofi"
+
+rm -rf "$HOME/.config/powermenu"
+ln -s "$ROOT/desktop/configs/powermenu" "$HOME/.config/powermenu"
+
+rm -rf "$HOME/.config/swaync"
+ln -s "$ROOT/desktop/configs/swaync" "$HOME/.config/swaync"
+
+ln -sf "$HOME/.config/desktop/scripts/desktop.sh" \
+       "$HOME/.local/bin/desktop"
+
+find "$HOME/.config/desktop" -type f -name "*.sh" -exec chmod +x {} \;
 
 echo
 echo "Running validation..."
+
 desktop doctor
 
 echo

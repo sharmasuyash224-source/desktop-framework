@@ -1,0 +1,1 @@
+/home/god/.config/desktop/scripts/desktop.sh

@@ -2,8 +2,6 @@
 
 source "$HOME/.config/desktop/core/framework.sh"
 
-desktop::module_load hyprlock
-
 log::info "Locking session..."
 
-exec hyprlock -c "$MODULE_CONFIG_DIR/hyprlock.conf"
+exec hyprlock --config "$HOME/.config/hyprlock/hyprlock.conf"

@@ -47,6 +47,22 @@ desktop::list_modules() {
     done | sort
 }
 
+desktop::module_list() {
+    desktop::list_modules
+}
+
+desktop::module_info() {
+
+    local module="$1"
+
+    desktop::module_load "$module" || return 1
+
+    echo "Name        : ${MODULE_NAME:-$module}"
+    echo "Version     : ${MODULE_VERSION:-Unknown}"
+    echo "Description : ${MODULE_DESCRIPTION:-None}"
+    echo "Config      : ${MODULE_CONFIG_DIR:-N/A}"
+}
+
 desktop::module_run() {
 
     local module="$1"
