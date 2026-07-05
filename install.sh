@@ -8,6 +8,7 @@ echo "==> Installing Desktop Framework v1.0.0"
 
 mkdir -p "$HOME/.config"
 mkdir -p "$HOME/.local/bin"
+mkdir -p "$HOME/.config/hypr"
 
 rm -f "$HOME/.config/desktop"
 ln -s "$ROOT/desktop" "$HOME/.config/desktop"
@@ -27,8 +28,14 @@ ln -s "$ROOT/desktop/configs/powermenu" "$HOME/.config/powermenu"
 rm -rf "$HOME/.config/swaync"
 ln -s "$ROOT/desktop/configs/swaync" "$HOME/.config/swaync"
 
-ln -sf "$HOME/.config/desktop/scripts/desktop.sh" \
-       "$HOME/.local/bin/desktop"
+rm -f "$HOME/.config/hypr/hypridle.conf"
+ln -s \
+"$ROOT/desktop/configs/hypridle/hypridle.conf" \
+"$HOME/.config/hypr/hypridle.conf"
+
+ln -sf \
+"$HOME/.config/desktop/scripts/desktop.sh" \
+"$HOME/.local/bin/desktop"
 
 find "$HOME/.config/desktop" -type f -name "*.sh" -exec chmod +x {} \;
 

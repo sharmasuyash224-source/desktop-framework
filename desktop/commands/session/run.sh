@@ -10,17 +10,19 @@ start)
 
     log::step "Starting desktop session"
 
-    hyprpaper -c "$HOME/.config/hypr/hyprpaper.conf" >/dev/null 2>&1 &
+    desktop::module_start hyprpaper
+    desktop::module_start hypridle
+    desktop::module_start waybar
+    desktop::module_start swaync
 
-    sleep 1
+    STATE="$HOME/.cache/hypr/last_wallpaper"
 
-    desktop wallpaper random >/dev/null 2>&1
-
-    waybar >/dev/null 2>&1 &
-
-    swaync >/dev/null 2>&1 &
-
-    playerctld daemon >/dev/null 2>&1 &
+    if [[ -f "$STATE" ]]; then
+        WALLPAPER="$(cat "$STATE")"
+        ~/.config/desktop/pipelines/wallpaper/steps/02-apply.sh
+    else
+        desktop wallpaper random >/dev/null 2>&1
+    fi
 
     log::success "Desktop session started."
     ;;
@@ -29,10 +31,10 @@ stop)
 
     log::step "Stopping desktop session"
 
-    pkill waybar 2>/dev/null || true
-    pkill swaync 2>/dev/null || true
-    pkill hyprpaper 2>/dev/null || true
-    pkill playerctld 2>/dev/null || true
+    desktop::module_stop waybar
+    desktop::module_stop swaync
+    desktop::module_stop hypridle
+    desktop::module_stop hyprpaper
 
     log::success "Desktop session stopped."
     ;;
@@ -40,9 +42,7 @@ stop)
 restart)
 
     "$0" stop
-
     sleep 1
-
     "$0" start
     ;;
 
@@ -52,7 +52,7 @@ status)
     printf "%-15s %-10s\n" "Service" "Status"
     printf "%-15s %-10s\n" "-------" "------"
 
-    for p in hyprpaper waybar swaync playerctld; do
+    for p in hyprpaper hypridle waybar swaync playerctld; do
         if pgrep -x "$p" >/dev/null; then
             printf "%-15s %-10s\n" "$p" "running"
         else
@@ -70,6 +70,7 @@ status)
     echo "  desktop session stop"
     echo "  desktop session restart"
     echo "  desktop session status"
+    exit 1
     ;;
 
 esac

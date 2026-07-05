@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+MODULE_NAME="hypridle"
+MODULE_VERSION="1.0.0"
+
+MODULE_DESCRIPTION="Hyprland idle daemon"
+
+MODULE_AUTHOR="Suyash"
+
+MODULE_CONFIG_DIR="$HOME/.config/hypridle"
+
+MODULE_REQUIRED=true
+MODULE_ENABLED=true
+
+MODULE_THEMEABLE=false
+MODULE_RELOADABLE=true

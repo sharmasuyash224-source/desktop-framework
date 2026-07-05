@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+source "$HOME/.config/desktop/core/framework.sh"
+source "$HOME/.config/desktop/core/pipeline.sh"
+
 WALL="$(pipeline::get wallpaper)"
 
 CONF="$HOME/.config/hypr/hyprpaper.conf"
